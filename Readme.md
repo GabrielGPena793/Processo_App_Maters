@@ -1,4 +1,5 @@
-# Projeto de seleção APP Masters : https://programador.emjuizdefora.com/
+# Projeto de seleção APP Masters
+https://programador.emjuizdefora.com/
 
 ## Comandos do projeto
 
