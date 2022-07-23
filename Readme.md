@@ -4,13 +4,16 @@ https://programador.emjuizdefora.com/
 ## Comandos do projeto
 
 - Instalando as dependências ( jest e supertest )
-  - npm install
+
+        npm install
 
 
 - Rodando o projeto 
-  - npm start 
+
+       npm start 
 
 
 - Rodar apenas para testes
-  - npm test
 
+        npm test
+  
