@@ -3,7 +3,7 @@ https://programador.emjuizdefora.com/
 
 ## Comandos do projeto
 
-- Instalando as dependências ( jest e supertest )
+- Instalando as dependências ( jest, supertest e express )
 
         npm install
 
