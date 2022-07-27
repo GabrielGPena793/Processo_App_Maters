@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require("./server");
+import app from "../src/server";
+import request from "supertest";
 
 describe("Check API",  () => {
 
