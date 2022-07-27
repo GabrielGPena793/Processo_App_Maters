@@ -1,11 +1,10 @@
 import { Router } from "express";
+import createDonationController from "../modules/devices/useCases/createDonation"
 
 const donationsRoutes =  Router();
 
 donationsRoutes.post("/", (request, response) => {
-  const { name } = request.body;
-  console.log(name)
+  return createDonationController().handle(request, response)
 })
-
 
 export { donationsRoutes };
