@@ -7,6 +7,12 @@ describe("[POST] /donation", () => {
       name: "",
       email: "string@hotmail.com",
       phone: "",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 1,
       devices: [
         {
@@ -32,6 +38,12 @@ describe("[POST] /donation", () => {
       name: "string",
       email: "stringhotmail.com",
       phone: "string",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 1,
       devices: [
         {
@@ -55,6 +67,12 @@ describe("[POST] /donation", () => {
       name: "string",
       email: "string@hotmail.com",
       phone: "string",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 1,
       devices: [],
     };
@@ -75,6 +93,12 @@ describe("[POST] /donation", () => {
       name: "string",
       email: "string@hotmail.com",
       phone: "string",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 2,
       devices: [
         {
@@ -100,6 +124,12 @@ describe("[POST] /donation", () => {
       name: "string",
       email: "string@hotmail.com",
       phone: "string",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 1,
       devices: [
         {
@@ -123,6 +153,12 @@ describe("[POST] /donation", () => {
       name: "string",
       email: "string@hotmail.com",
       phone: "string",
+      zip: "5211-000",
+      city: "Recife",
+      state: "Pernambuco",
+      streetAddress: "Rua da rua",
+      number: "5000",
+      neighborhood: "vizinhaça ",
       deviceCount: 1,
       devices: [
         {

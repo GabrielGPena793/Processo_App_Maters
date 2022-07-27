@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { CreateDonationUseCase, IRequest } from "./CreateDonationUseCase";
+import { CreateDonationUseCase } from "./CreateDonationUseCase";
 
 
 class CreateDonationController {
@@ -7,7 +7,7 @@ class CreateDonationController {
   constructor(private createDonationUseCase: CreateDonationUseCase){}
 
   handle(request: Request, response: Response) : Response {
-    const donation: IRequest = request.body;
+    const donation = request.body;
 
     try {
       this.createDonationUseCase.execute(donation)

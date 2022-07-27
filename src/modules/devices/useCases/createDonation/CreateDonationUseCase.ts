@@ -1,5 +1,5 @@
 interface IObjectKeys {
-  [key: string]: string | number | Array<Object>;
+  [key: string]: string | number | Array<Object> | undefined;
 }
 
 type device = {
@@ -9,34 +9,73 @@ type device = {
 
 interface IRequest extends IObjectKeys {
   name: string;
-  email: string;
   phone: string;
+  email?: string;
+  zip: string;
+  city: string;
+  state: string;
+  streetAddress: string;
+  number: string;
+  complement?: string;
+  neighborhood: string;
   deviceCount: number;
   devices: device[];
 }
 
 class CreateDonationUseCase {
-  execute(donation: IRequest) {
+  execute({
+    name,
+    phone,
+    email,
+    zip,
+    city,
+    state,
+    streetAddress,
+    number,
+    neighborhood,
+    complement,
+    deviceCount,
+    devices,
+  }: IRequest) {
+
+    let donation: IRequest = {
+      name,
+      phone,
+      email,
+      zip,
+      city,
+      state,
+      streetAddress,
+      number,
+      neighborhood,
+      complement,
+      deviceCount,
+      devices,
+    }
+
+
     this.verifyEmptyFields(donation);
 
-    this.validateEmail(donation.email);
+    if (email != undefined) {
+      this.validateEmail(email);
+    }
 
-    if (donation.devices.length != donation.deviceCount) {
+    if (devices.length != deviceCount) {
       let objectError = {
         error: true,
-        errorMessage: `The amount of equipment ${donation.deviceCount} does not match the information of equipment sent ${donation.devices.length}`,
+        errorMessage: `The amount of equipment ${deviceCount} does not match the information of equipment sent ${devices.length}`,
       };
       throw objectError;
     }
 
-    this.verifyDevicesTypes(donation.devices);
+    this.verifyDevicesTypes(devices);
   }
 
   verifyEmptyFields(donation: IRequest) {
-    let requiredFields = [];
+    let requiredFields: string[] = [];
 
     for (let item in donation) {
-      if (!donation[item]) {
+      if (!donation[item] && item !== "email" && item !== "complement") {
         requiredFields.push(item);
       }
     }
