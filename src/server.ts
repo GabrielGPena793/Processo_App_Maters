@@ -11,6 +11,7 @@ app.use(express.json());
 
 app.use(router);
 
+// Pegando todos os erros que foram lançados durante a execução
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
 
   if (err instanceof FieldsRequiredError) {
