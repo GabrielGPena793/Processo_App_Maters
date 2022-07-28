@@ -1,3 +1,6 @@
+import { AppErros } from "../../../errors/AppErros";
+import { FieldsRequiredError } from "../../../errors/FieldsRequiredError";
+
 interface IObjectKeys {
   [key: string]: string | number | Array<Object> | undefined;
 }
@@ -61,11 +64,7 @@ class CreateDonationUseCase {
     }
 
     if (devices.length != deviceCount) {
-      let objectError = {
-        error: true,
-        errorMessage: `The amount of equipment ${deviceCount} does not match the information of equipment sent ${devices.length}`,
-      };
-      throw objectError;
+      throw new AppErros(`The amount of equipment ${deviceCount} does not match the information of equipment sent ${devices.length}`);
     }
 
     this.verifyDevicesTypes(devices);
@@ -85,13 +84,7 @@ class CreateDonationUseCase {
     }
 
     if (requiredFields.length > 0) {
-      let ObjectError = {
-        error: true,
-        requiredFields: requiredFields,
-        errorMessage: "All mandatory fields must be informed",
-      };
-
-      throw ObjectError;
+      throw new FieldsRequiredError("All mandatory fields must be informed", requiredFields);
     }
   }
 
@@ -99,11 +92,7 @@ class CreateDonationUseCase {
     var regEmail = /\S+@\S+\.\S+/;
 
     if (!regEmail.test(email)) {
-      let objectError = {
-        error: true,
-        errorMessage: "Email invalid!",
-      };
-      throw objectError;
+      throw new AppErros("Email invalid!");
     }
   }
 
@@ -119,12 +108,7 @@ class CreateDonationUseCase {
 
     for (let device of devices) {
       if (!devicesTypes.includes(device.type)) {
-        let objectError = {
-          error: true,
-          errorMessage: `${device.type} is not a valid type`,
-        };
-
-        throw objectError;
+        throw new AppErros(`${device.type} is not a valid type`);
       }
     }
   }

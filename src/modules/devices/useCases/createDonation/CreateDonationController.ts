@@ -9,11 +9,9 @@ class CreateDonationController {
   handle(request: Request, response: Response) : Response {
     const donation = request.body;
 
-    try {
-      this.createDonationUseCase.execute(donation)
-    } catch (err: any) {
-      return response.status(400).json({...err});
-    }
+
+    this.createDonationUseCase.execute(donation)
+
     
     return response.status(200).json({ success:true })
   }
